@@ -49,10 +49,16 @@ source "$ITEM_DIR/front_app.sh"
 # https://felixkratz.github.io/SketchyBar/config/events
 
 source "$ITEM_DIR/clock.sh"
-# source "$ITEM_DIR/volume.sh"
-# source "$ITEM_DIR/battery.sh"
-#sketchybar --add alias "截屏,Item-0" right \
-#           --set "截屏,Item-0" update_freq=2
 
+sketchybar -m --add item vpn right \
+              --set vpn icon= \
+                        update_freq=5 \
+                        script="~/.config/sketchybar/plugins/vpn.sh"
+
+source "$ITEM_DIR/music.sh"
+
+# source "$ITEM_DIR/battery.sh"
+#sketchybar --add alias "Surge,Item-0" right \
+#           --set "Surge,Item-0" update_freq=2
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update
