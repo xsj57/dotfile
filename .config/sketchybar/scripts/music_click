@@ -1,15 +1,11 @@
-#!/usr/bin/env osascript
+#!/usr/bin/env bash
 
-tell application "Music"
-    if favorited of current track is true then
-        set favorited of current track to false
-        do shell script "sketchybar -m --set music icon=♥ icon.color=0xbaffffff"
-      else
-        set favorited of current track to true
-        do shell script "sketchybar -m --set music icon="
-    end if
-end tell
+# 切换播放/暂停
+osascript -e 'tell application "Music" to playpause' 2>/dev/null
 
-delay 1
+# 等待状态更新
+sleep 0.5
 
-do shell script "bash /Users/dgrebb/.config/sketchybar/plugins/music.sh"
+# 刷新显示
+~/.config/sketchybar/scripts/music
+

@@ -56,7 +56,6 @@ sketchybar -m --add item vpn right \
                         script="~/.config/sketchybar/plugins/vpn.sh"
 
 source "$ITEM_DIR/music.sh"
-
 # source "$ITEM_DIR/battery.sh"
 #sketchybar --add alias "Surge,Item-0" right \
 #           --set "Surge,Item-0" update_freq=2
