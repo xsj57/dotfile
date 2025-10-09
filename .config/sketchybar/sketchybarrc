@@ -50,10 +50,7 @@ source "$ITEM_DIR/front_app.sh"
 
 source "$ITEM_DIR/clock.sh"
 
-sketchybar -m --add item vpn right \
-              --set vpn icon= \
-                        update_freq=5 \
-                        script="~/.config/sketchybar/plugins/vpn.sh"
+source "$ITEM_DIR/input_source.sh"
 
 source "$ITEM_DIR/music.sh"
 # source "$ITEM_DIR/battery.sh"
