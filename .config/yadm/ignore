@@ -17,5 +17,6 @@ ehthumbs.db
 # 临时文件
 *.swp
 *~
-
+# Sketchybar 调试日志
+.config/sketchybar/music_debug.log
 
