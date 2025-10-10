@@ -53,109 +53,48 @@ local bundleInputMethod = {
 
 	-- ===== 代码编辑器 / IDE =====
 	["com.microsoft.VSCode"] = inputMethods.english,
-	["com.microsoft.VSCodeInsiders"] = inputMethods.english,
-	["com.visualstudio.code.oss"] = inputMethods.english,
-	["com.todesktop.230313mzl4w4u92"] = inputMethods.english, -- Cursor
-	["com.apple.dt.Xcode"] = inputMethods.english,
-	["com.sublimetext.4"] = inputMethods.english,
-	["com.sublimetext.3"] = inputMethods.english,
-	["com.github.atom"] = inputMethods.english,
-	["com.jetbrains.intellij"] = inputMethods.english,
-	["com.jetbrains.intellij.ce"] = inputMethods.english,
-	["com.jetbrains.pycharm"] = inputMethods.english,
-	["com.jetbrains.pycharm.ce"] = inputMethods.english,
-	["com.jetbrains.webstorm"] = inputMethods.english,
-	["com.jetbrains.goland"] = inputMethods.english,
-	["com.jetbrains.datagrip"] = inputMethods.english,
-	["com.jetbrains.rider"] = inputMethods.english,
-	["com.jetbrains.CLion"] = inputMethods.english,
-	["com.jetbrains.PhpStorm"] = inputMethods.english,
-	["com.jetbrains.rubymine"] = inputMethods.english,
-	["com.jetbrains.AppCode"] = inputMethods.english,
-	["com.google.android.studio"] = inputMethods.english,
 
 	-- ===== 开发工具 =====
-	-- ["com.docker.docker"] = inputMethods.english,
-	-- ["com.electron.dockerdesktop"] = inputMethods.english,
-	-- ["com.github.GitHubClient"] = inputMethods.english,
-	-- ["com.github.desktop"] = inputMethods.english,
-	-- ["com.sourcetreeapp.SourceTree"] = inputMethods.english,
-	-- ["com.tinyapp.TablePlus"] = inputMethods.english,
-	-- ["com.sequelpro.SequelPro"] = inputMethods.english,
-	-- ["com.oracle.java.JavaControlPanel"] = inputMethods.english,
-	-- ["com.postmanlabs.mac"] = inputMethods.english,
-	-- ["com.paw.PAW"] = inputMethods.english,
-	-- ["com.insomnia.app"] = inputMethods.english,
-	-- ["com.luckymarmot.Paw"] = inputMethods.english,
 
 	-- ===== 聊天软件 =====
 	["com.tencent.xinWeChat"] = inputMethods.chinese,
 	["com.tencent.qq"] = inputMethods.chinese,
-	-- ["com.tencent.mqq"] = inputMethods.chinese,
-	-- ["com.tencent.QQMusicMac"] = inputMethods.chinese,
+	["com.tencent.mqq"] = inputMethods.chinese,
 	["com.alibaba.DingTalkMac"] = inputMethods.chinese,
-	-- ["com.electron.lark"] = inputMethods.chinese,  -- 飞书
-	-- ["com.bytedance.Feishu"] = inputMethods.chinese,
-	-- ["com.bytedance.Lark"] = inputMethods.chinese,
-	-- ["com.facebook.archon.Messenger"] = inputMethods.chinese,
-	-- ["com.tdesktop.Telegram"] = inputMethods.chinese,
-	-- ["ru.keepcoder.Telegram"] = inputMethods.chinese,
-	-- ["com.apple.MobileSMS"] = inputMethods.chinese,  -- Messages
-	-- ["com.microsoft.teams"] = inputMethods.chinese,
-	-- ["com.microsoft.teams2"] = inputMethods.chinese,
-	-- ["com.slack.Slack"] = inputMethods.english,
-	-- ["com.discordapp.Discord"] = inputMethods.english,
+	["com.tdesktop.Telegram"] = inputMethods.chinese,
+	["ru.keepcoder.Telegram"] = inputMethods.chinese,
+	["com.apple.MobileSMS"] = inputMethods.chinese, -- Messages
+	["com.discordapp.Discord"] = "keep",
 
 	-- ===== 笔记/文档 =====
-	-- ["notion.id"] = inputMethods.chinese,
-	-- ["md.obsidian"] = inputMethods.chinese,
-	-- ["com.electron.typora"] = inputMethods.chinese,
-	-- ["abnerworks.Typora"] = inputMethods.chinese,
-	-- ["com.microsoft.Word"] = inputMethods.chinese,
-	-- ["com.apple.iWork.Pages"] = inputMethods.chinese,
-	-- ["com.apple.Notes"] = inputMethods.chinese,
-	-- ["com.evernote.Evernote"] = inputMethods.chinese,
-	-- ["com.yinxiang.Mac"] = inputMethods.chinese,  -- 印象笔记
-	-- ["com.onenotetool.OneNoteImporter"] = inputMethods.chinese,
-	-- ["com.microsoft.onenote.mac"] = inputMethods.chinese,
-	-- ["com.readdle.ReaddleDocsIPad"] = inputMethods.chinese,
-	-- ["com.craftdocs.craft"] = inputMethods.chinese,
-	-- ["com.electron.logseq"] = inputMethods.chinese,
-	-- ["com.bohemiancoding.sketch3"] = inputMethods.english,
+	["notion.id"] = inputMethods.chinese,
+	["md.obsidian"] = inputMethods.chinese,
+	["com.microsoft.Word"] = inputMethods.chinese,
+	["com.apple.iWork.Pages"] = inputMethods.chinese,
+	["com.apple.Notes"] = inputMethods.chinese,
+	["com.microsoft.Powerpoint"] = inputMethods.chinese,
+	["com.microsoft.Excel"] = inputMethods.chinese,
 
 	-- ===== 浏览器（保持当前） =====
-	-- ["com.apple.Safari"] = "keep",
-	-- ["com.google.Chrome"] = "keep",
-	-- ["com.google.Chrome.canary"] = "keep",
+	["com.apple.Safari"] = "keep",
+	["com.google.Chrome"] = "keep",
+	["com.google.Chrome.canary"] = "keep",
+	["ai.perplexity.comet"] = "keep",
 
 	-- ===== 系统工具 =====
-	-- ["com.apple.finder"] = inputMethods.english,
-	-- ["com.apple.systempreferences"] = inputMethods.english,
-	-- ["com.apple.systemsettings"] = inputMethods.english,
-	-- ["com.apple.ActivityMonitor"] = inputMethods.english,
-	-- ["com.apple.Console"] = inputMethods.english,
-	-- ["com.apple.DiskUtility"] = inputMethods.english,
+	["com.apple.finder"] = inputMethods.english,
 
 	-- ===== 邮件 =====
-	-- ["com.apple.mail"] = inputMethods.chinese,
-	-- ["com.microsoft.Outlook"] = inputMethods.chinese,
-	-- ["com.readdle.smartemail-Mac"] = inputMethods.chinese,
-	-- ["com.google.Gmail"] = inputMethods.chinese,
+	["com.apple.mail"] = inputMethods.chinese,
+	["com.microsoft.Outlook"] = inputMethods.chinese,
+	["com.google.Gmail"] = inputMethods.chinese,
 
 	-- ===== 音视频 =====
-	-- ["com.apple.QuickTimePlayerX"] = inputMethods.english,
-	-- ["com.colliderli.iina"] = inputMethods.english,
-	-- ["org.videolan.vlc"] = inputMethods.english,
-	-- ["com.apple.Music"] = inputMethods.english,
-	-- ["com.spotify.client"] = inputMethods.english,
-	-- ["com.netease.163music"] = inputMethods.chinese,
+	["com.apple.Music"] = "keep",
+	["com.spotify.client"] = inputMethods.english,
 
 	-- ===== 其他工具 =====
 	-- ["com.raycast.macos"] = inputMethods.english,
-	-- ["com.agiletortoise.Drafts-OSX"] = inputMethods.chinese,
-	-- ["com.tapbots.Ivory"] = inputMethods.chinese,  -- Mastodon 客户端
-	-- ["com.redis.Redis-Desktop-Manager"] = inputMethods.english,
-	-- ["org.mozilla.thunderbird"] = inputMethods.chinese,
 }
 
 -- =============================================
