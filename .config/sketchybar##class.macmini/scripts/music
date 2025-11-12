@@ -1,0 +1,73 @@
+#!/usr/bin/env bash
+
+INFO_FILE="/tmp/music_info.txt"
+
+# 检查 Music 应用是否运行
+if ! pgrep -x Music > /dev/null; then 
+    sketchybar --set music drawing=off
+    exit 0
+fi
+
+# 确保监听器在运行
+if ! pgrep -f music_monitor_file > /dev/null; then
+    ~/.config/sketchybar/scripts/music_monitor_file > /dev/null 2>&1 &
+    sleep 1
+fi
+
+# 读取信息文件
+if [[ -f "$INFO_FILE" ]] && [[ -s "$INFO_FILE" ]]; then
+    TITLE=$(grep "^title:" "$INFO_FILE" | cut -d: -f2-)
+    ARTIST=$(grep "^artist:" "$INFO_FILE" | cut -d: -f2-)
+    STATE=$(grep "^state:" "$INFO_FILE" | cut -d: -f2-)
+    
+    # 去除前后空格
+    TITLE=$(echo "$TITLE" | xargs)
+    ARTIST=$(echo "$ARTIST" | xargs)
+    STATE=$(echo "$STATE" | xargs)
+    
+    # 调试输出
+    echo "$(date '+%H:%M:%S') - Title='$TITLE', Artist='$ARTIST', State='$STATE'" >> ~/.config/sketchybar/music_debug.log
+    
+    if [[ -n "$TITLE" ]]; then
+        # 设置图标
+        ICON="􀊖"  # 播放
+        if [[ "$STATE" == "Paused" ]]; then
+            ICON="􀊘"  # 暂停
+        fi
+        
+        # 处理长度
+        if [[ ${#TITLE} -gt 20 ]]; then
+            TITLE="${TITLE:0:20}…"
+        fi
+        if [[ ${#ARTIST} -gt 15 ]]; then
+            ARTIST="${ARTIST:0:15}…"
+        fi
+        
+        # 组合标签
+        if [[ -n "$ARTIST" ]]; then
+            LABEL="${TITLE} - ${ARTIST}"
+        else
+            LABEL="$TITLE"
+        fi
+        
+        # 更新 SketchyBar
+        sketchybar --set music icon="$ICON" \
+                              label="$LABEL" \
+                              drawing=on
+    else
+        # 没有标题但有状态，显示通用信息
+        if [[ -n "$STATE" ]]; then
+            ICON="􀊖"
+            [[ "$STATE" == "Paused" ]] && ICON="􀊘"
+            sketchybar --set music icon="$ICON" \
+                                  label="Apple Music" \
+                                  drawing=on
+        else
+            sketchybar --set music drawing=off
+        fi
+    fi
+else
+    # 文件不存在或为空
+    sketchybar --set music drawing=off
+fi
+
