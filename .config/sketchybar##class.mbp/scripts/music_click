@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# 切换播放/暂停
+osascript -e 'tell application "Music" to playpause' 2>/dev/null
+
+# 等待状态更新
+sleep 0.5
+
+# 刷新显示
+~/.config/sketchybar/scripts/music
+

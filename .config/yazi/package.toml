@@ -1,0 +1,22 @@
+[plugin]
+deps = []
+
+[[flavor.deps]]
+use = "yazi-rs/flavors:catppuccin-macchiato"
+rev = "3e6da98"
+hash = "1e2cc3f0f96197f3dac9591be50bb2af"
+
+[[flavor.deps]]
+use = "yazi-rs/flavors:catppuccin-latte"
+rev = "3e6da98"
+hash = "509055ecc7e6315cb574be36da7a4495"
+
+[[flavor.deps]]
+use = "yazi-rs/flavors:dracula"
+rev = "3e6da98"
+hash = "eefb18cb038121aed2b6eeaacea5a63e"
+
+[[flavor.deps]]
+use = "Mintass/rose-pine-dawn"
+rev = "5c6d353"
+hash = "d9d9463d5d43ced18e18986d05439ace"

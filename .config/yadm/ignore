@@ -1,0 +1,27 @@
+# 忽略 .DS_Store
+.DS_Store
+**/.DS_Store
+
+# 忽略不需要同步的配置
+.config/Autodesk/
+.config/clash/
+.config/clash.meta/
+.config/configstore/
+.config/gh/
+.config/iterm2/
+.config/karabiner/
+.config/mpv/
+.config/pip/
+.config/raycast/
+.config/rclone/
+.config/StardewValley/
+.config/tidal_dl_ng/
+.config/uv/
+
+# 忽略缓存和临时文件
+**/.cache/
+**/cache/
+**/*.log
+**/*.tmp
+**/*.swp
+*~
