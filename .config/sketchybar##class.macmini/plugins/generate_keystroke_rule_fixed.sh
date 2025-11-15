@@ -52,7 +52,7 @@ for KEY in "${KEY_CODES[@]}"; do
   echo '          ],' >>"$OUTPUT_FILE"
   echo '          "to": [' >>"$OUTPUT_FILE"
   echo '            {' >>"$OUTPUT_FILE"
-  echo '              "shell_command": "/bin/bash /Users/ericxu/.config/sketchybar/plugins/update_keystroke.sh"' >>"$OUTPUT_FILE"
+  echo '              "shell_command": "/bin/bash /Users/ericxu/.config/sketchybar##class.macmini/plugins/update_keystroke.sh"' >>"$OUTPUT_FILE"
   echo '            },' >>"$OUTPUT_FILE"
   echo '            {' >>"$OUTPUT_FILE"
   echo '              "key_code": "'"$KEY"'"' >>"$OUTPUT_FILE"
