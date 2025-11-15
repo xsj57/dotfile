@@ -1,35 +1,29 @@
 #!/bin/bash
 
-OUTPUT_FILE=~/keystroke_counter_excluded.json
+OUTPUT_FILE=~/keystroke_counter_fixed.json
 
 # 清空输出文件
 >"$OUTPUT_FILE"
 
 # 开始 JSON
 echo '{' >>"$OUTPUT_FILE"
-echo '  "title": "Keystroke Counter (Exclude F and Navigation Keys)",' >>"$OUTPUT_FILE"
+echo '  "title": "Keystroke Counter (Letters, Numbers, Symbols - No Hyperkey Conflict)",' >>"$OUTPUT_FILE"
 echo '  "rules": [' >>"$OUTPUT_FILE"
 echo '    {' >>"$OUTPUT_FILE"
-echo '      "description": "Count keystrokes excluding F keys and navigation",' >>"$OUTPUT_FILE"
+echo '      "description": "Count letters, numbers, symbols; exclude when Caps Lock (Hyperkey) pressed",' >>"$OUTPUT_FILE"
 echo '      "manipulators": [' >>"$OUTPUT_FILE"
 
-# 保留的 key_codes 列表（排除 F1-F20, arrows, page_up/down, home/end, insert 等）
+# 正确 key_code 列表（字母、数字、标点；使用官方名称）
 KEY_CODES=(
   # 字母
   a b c d e f g h i j k l m n o p q r s t u v w x y z
   # 数字
   0 1 2 3 4 5 6 7 8 9
-  # 符号和标点
-  hyphen equal left_bracket right_bracket backslash semicolon quote comma period slash grave_accent
-  # 控制键
-  escape tab caps_lock left_shift left_control left_option left_command
-  right_shift right_control right_option right_command
-  space return delete forward_delete
-  # 数字键盘
+  # 符号和标点（官方名称）
+  hyphen equal_sign open_bracket close_bracket backslash semicolon single_quote comma period slash grave_accent_and_tilde
+  # 数字键盘（数字 + 符号）
   keypad_0 keypad_1 keypad_2 keypad_3 keypad_4 keypad_5 keypad_6 keypad_7 keypad_8 keypad_9
-  keypad_decimal keypad_plus keypad_minus keypad_multiply keypad_divide keypad_enter keypad_clear keypad_equal
-  # 其他常见（保留音量等，如果你想排除，移除）
-  volume_up volume_down mute
+  keypad_period keypad_hyphen keypad_asterisk keypad_slash keypad_equal_sign
 )
 
 TOTAL_KEYS=${#KEY_CODES[@]}
@@ -49,9 +43,16 @@ for KEY in "${KEY_CODES[@]}"; do
   echo '              "optional": ["any"]' >>"$OUTPUT_FILE"
   echo '            }' >>"$OUTPUT_FILE"
   echo '          },' >>"$OUTPUT_FILE"
+  echo '          "conditions": [' >>"$OUTPUT_FILE"
+  echo '            {' >>"$OUTPUT_FILE"
+  echo '              "type": "modifier_flag",' >>"$OUTPUT_FILE" # 正确类型
+  echo '              "name": "caps_lock",' >>"$OUTPUT_FILE"
+  echo '              "value": 0' >>"$OUTPUT_FILE" # 0 表示未按下 (unless pressed)
+  echo '            }' >>"$OUTPUT_FILE"
+  echo '          ],' >>"$OUTPUT_FILE"
   echo '          "to": [' >>"$OUTPUT_FILE"
   echo '            {' >>"$OUTPUT_FILE"
-  echo '              "shell_command": "/bin/bash /Users/ericxu/.config/sketchybar/plugins/update_keystroke.sh"' >>"$OUTPUT_FILE"
+  echo '              "shell_command": "/bin/bash /Users/ericxu/.config/sketchybar##class.mbp/plugins/update_keystroke.sh"' >>"$OUTPUT_FILE"
   echo '            },' >>"$OUTPUT_FILE"
   echo '            {' >>"$OUTPUT_FILE"
   echo '              "key_code": "'"$KEY"'"' >>"$OUTPUT_FILE"
